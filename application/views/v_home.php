@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h3><?= $cadastros->num_rows(); ?> registros(s)</h3>
 			</div>
 			<div class="row">
-			<? if($cadastros->num_rows() > 0): ?>
+			<?php if($cadastros->num_rows() > 0) { ?>
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</tr>
 					</thead>
 					<tbody>
-						<?php foreach ($cadastros -> result() as $cadastro) { ?>:
+						<?php foreach ($cadastros -> result() as $cadastro) { ?>
 						<tr>
 							<td><?= $cadastro->id ?></td>
 							<td><?= $cadastro->nome; ?></td>
@@ -48,9 +48,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<?php } ?>
 					</tbody>
 				</table>
-				<? else: ?>
+				<?php } else { ?>
 					<h4>Nenhum registro cadastrado.</h4>
-				<? endif; ?>
+				<?php } ?>
 			</div>
 		</div>	
 	</div>
